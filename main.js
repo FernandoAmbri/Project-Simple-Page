@@ -10,8 +10,8 @@ function displayGrid() {
   let grid = prompt(
     "Enter the number of the divs you want to display per side."
   );
+  let totalWidth = container.clientWidth / grid;
   if (grid <= 100) {
-    let totalWidth = container.clientWidth / grid;
     for (let i = 1; i <= grid; i++) {
       for (let j = 1; j <= grid; j++) {
         const div = document.createElement("div");
@@ -26,4 +26,14 @@ function displayGrid() {
       }
     }
   }
+  document.querySelectorAll("#test").forEach((div) => {
+    div.addEventListener("mouseover", () => {
+      div.style =
+        "width: " +
+        totalWidth +
+        "px; height: " +
+        totalWidth +
+        "px; background: green; border: 1px solid black; cursor: pointer;";
+    });
+  });
 }
