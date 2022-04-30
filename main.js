@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 
 function displayGrid() {
   let divs = document.querySelectorAll("#test");
-  if (document.querySelectorAll("#test").length != 0) {
+  if (divs.length > 0) {
     for (let i = 0; i < divs.length; i++) {
       divs[i].remove();
     }
